@@ -1,0 +1,69 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Медицинский помощник</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body class="tg-app">
+    <a href="/profile" class="profile-icon">
+        <i class="bi bi-person-circle"></i>
+    </a>
+    <div class="container">
+        <header>
+            <h1>Медицинский помощник</h1>
+            <div class="search-container">
+                <div class="search-wrapper">
+                    <label for="searchInput"></label><input type="text" id="searchInput" placeholder="Поиск лекарства...">
+                    <div id="suggestions" class="suggestions hidden"></div>
+                </div>
+                <button id="searchButton">Найти</button>
+            </div>
+        </header>
+
+        <main>
+            <div id="searchResults" class="search-results"></div>
+            
+            <div id="medicineDetails" class="medicine-details hidden">
+                <h2 id="medicineName"></h2>
+                <div class="medicine-info">
+                    <h3>Описание</h3>
+                    <p id="medicineDescription"></p>
+                    
+                    <h3>Дозировка</h3>
+                    <p id="medicineDosage"></p>
+                    
+                    <h3>Взаимодействие</h3>
+                    <p id="medicineInteractions"></p>
+                </div>
+                <button id="addReminder" class="reminder-button">Добавить напоминание</button>
+            </div>
+
+            <div id="reminderModal" class="modal hidden">
+                <div class="modal-content">
+                    <h3>Настройка напоминания</h3>
+                    <div class="reminder-form">
+                        <label for="reminderTime">Время приема:</label>
+                        <input type="time" id="reminderTime">
+                        
+                        <label for="reminderFrequency">Частота приема:</label>
+                        <select id="reminderFrequency">
+                            <option value="once">Один раз</option>
+                            <option value="daily">Ежедневно</option>
+                            <option value="weekly">Еженедельно</option>
+                        </select>
+                        
+                        <button id="saveReminder">Сохранить</button>
+                        <button id="cancelReminder">Отмена</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
