@@ -157,19 +157,9 @@ function displaySearchResults(medicines) {
         card.addEventListener('click', () => showMedicineDetails(medicine));
         searchResults.appendChild(card);
     });
+
 }
 
-// Показать детали лекарства
-function showMedicineDetails(medicine) {
-    currentMedicine = medicine;
-    medicineName.textContent = medicine.name;
-    medicineDescription.textContent = medicine.description || 'Описание отсутствует';
-    medicineDosage.textContent = medicine.dosage || 'Информация о дозировке отсутствует';
-    medicineInteractions.textContent = medicine.interactions || 'Информация о взаимодействии отсутствует';
-
-    searchResults.innerHTML = '';
-    medicineDetails.classList.remove('hidden');
-}
 
 // Обработчики модального окна напоминания
 addReminderButton.addEventListener('click', () => {
@@ -196,7 +186,7 @@ saveReminderButton.addEventListener('click', async () => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                medicineId: currentMedicine.id,
+                medicine: {id : currentMedicine.id},
                 time: time,
                 frequency: frequency,
                 userId: tg.initDataUnsafe?.user?.id

@@ -17,11 +17,11 @@ public class ReminderController {
         this.reminderService = reminderService;
     }
 
-    @PostMapping
-    public ResponseEntity<Reminder> createReminder(@RequestBody Reminder reminder) {
-        Reminder savedReminder = reminderService.createReminder(reminder);
-        return ResponseEntity.ok(savedReminder);
-    }
+//    @PostMapping
+//    public ResponseEntity<Reminder> createReminder(@RequestBody Reminder reminder) {
+//        Reminder savedReminder = reminderService.createReminder(reminder);
+//        return ResponseEntity.ok(savedReminder);
+//    }
 
     @GetMapping("/user/{userId}")
     public ResponseEntity<?> getUserReminders(@PathVariable Long userId) {

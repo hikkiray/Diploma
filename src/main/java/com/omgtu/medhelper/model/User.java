@@ -3,9 +3,6 @@ package com.omgtu.medhelper.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.text.DateFormat;
-import java.time.LocalTime;
-
 @Entity
 @Data
 @Table(name = "users")
@@ -19,9 +16,6 @@ public class User {
 
     @Column(nullable = false)
     private String username;
-
-    @Column
-    private LocalTime created_at;
 
     @Column
     private String email;

@@ -39,6 +39,10 @@ public class MedHelperBot extends TelegramLongPollingBot {
 
             if (messageText.equals("/start")) {
                 sendWelcomeMessage(chatId);
+                sendMessage(chatId, "\uD83D\uDCCC Напоминание о приеме\n" +
+                        "\n" +
+                        "Сейчас 2:35 вам нужно принять Ибупрофен \n" +
+                        "Дозировка : 200 мг");
             } else if (messageText.equals("/help")) {
                 sendMessage(chatId, "Доступные команды:\n/start - начать работу\n/help - помощь");
             } else {
@@ -58,7 +62,7 @@ public class MedHelperBot extends TelegramLongPollingBot {
         
         InlineKeyboardButton button = new InlineKeyboardButton();
         button.setText("Открыть приложение");
-        button.setWebApp(new org.telegram.telegrambots.meta.api.objects.webapp.WebAppInfo("https://t.me/MedHelperDrugTrackingBot/app"));
+        button.setWebApp(new org.telegram.telegrambots.meta.api.objects.webapp.WebAppInfo("https://t.me/MedHelperDrugTrackingBot/MedHelperDrugTracking"));
         row.add(button);
         
         keyboard.add(row);

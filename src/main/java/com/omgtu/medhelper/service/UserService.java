@@ -4,7 +4,6 @@ import com.omgtu.medhelper.model.User;
 import com.omgtu.medhelper.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.Optional;
 
 @Service
@@ -16,10 +15,12 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public User createUser(String telegramId, String name) {
+    public User createUser(String telegramId, String username, String name, String email) {
         User user = new User();
         user.setTelegramId(telegramId);
+        user.setUsername(username);
         user.setName(name);
+        user.setEmail(email);
         return userRepository.save(user);
     }
 
